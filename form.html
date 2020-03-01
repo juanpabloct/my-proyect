@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        cursos <input type="text" id="curso" value="" placeholder="escriba su usuario"> <br />
+        materias<input type="text" id="materia"> <br />
+        notas <input type="number" id="nota"> <br />
+        <input type="submit" value="enviar">
+
+    </form>
+    <script>
+        var curso = document.getElementById("curso")
+        curso.addEventListener('keydown', (e) => {
+            console.log(e.key)
+            /*if (
+                e.key === "3" ||
+                e.key === "0" ||
+                e.key === "1" ||
+                e.key === "2" ||
+                e.key === "4" ||
+                e.key === "5" ||
+                e.key === "6" ||
+                e.key === "7" ||
+                e.key === "8" ||
+                e.key === "9"
+            ) {
+                e.preventDefault()
+            }*/
+            /* if ([0, 1, 2, 3, 4, 5, 6, 7, 8, 9].includes(parseInt(e.key))) {
+                e.preventDefault()
+            } */
+            if ((/[0-9]/.test(e.key))) {
+                e.preventDefault()
+            }
+        })
+        var materia = document.getElementById("materia")
+        var nota = document.getElementById("nota")
+        function enviar(event) {
+            event.preventDefault()
+            console.log(curso.value)
+            console.log(materia.value)
+            console.log(nota.value)
+        }
+        document.getElementsByTagName("form")[0].addEventListener("submit", enviar)
+
+
+    </script>
+</body>
+
+</html>
